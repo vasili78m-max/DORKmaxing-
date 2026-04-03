@@ -1,0 +1,58 @@
+exposed-env:
+  - 'filetype:env "DB_PASSWORD" site:{target}'
+  - 'filetype:env "APP_SECRET" site:{target}'
+  - 'filetype:env "AWS_ACCESS_KEY" site:{target}'
+  - 'filetype:env site:{target}'
+
+login-panels:
+  - 'inurl:admin intitle:"login" site:{target}'
+  - 'inurl:login intitle:"admin" site:{target}'
+  - 'inurl:wp-admin site:{target}'
+  - 'inurl:administrator site:{target}'
+  - 'inurl:dashboard intitle:"login" site:{target}'
+
+open-directories:
+  - 'intitle:"index of /" site:{target}'
+  - 'intitle:"index of" inurl:ftp site:{target}'
+  - 'intitle:"directory listing" site:{target}'
+
+config-files:
+  - 'filetype:xml inurl:config site:{target}'
+  - 'filetype:conf inurl:config site:{target}'
+  - 'filetype:ini inurl:config site:{target}'
+  - 'filetype:yaml inurl:config site:{target}'
+  - 'filetype:json inurl:config site:{target}'
+
+sensitive-docs:
+  - 'filetype:pdf "confidential" site:{target}'
+  - 'filetype:xls "password" site:{target}'
+  - 'filetype:xlsx "internal" site:{target}'
+  - 'filetype:doc "private" site:{target}'
+
+git-exposed:
+  - 'inurl:".git" intitle:"index of" site:{target}'
+  - 'inurl:".git/config" site:{target}'
+
+sql-errors:
+  - 'intext:"sql syntax" site:{target}'
+  - 'intext:"mysql error" site:{target}'
+  - 'intext:"ORA-01756" site:{target}'
+  - 'intext:"Warning: mysqli" site:{target}'
+
+backup-files:
+  - 'filetype:bak site:{target}'
+  - 'filetype:sql site:{target}'
+  - 'filetype:old site:{target}'
+  - 'filetype:backup site:{target}'
+  - 'inurl:backup site:{target}'
+
+cameras:
+  - 'inurl:"/view/index.shtml" intitle:webcam'
+  - 'inurl:"/axis-cgi/jpg" intitle:live'
+  - 'intitle:"webcamxp 5" inurl:8080'
+
+api-keys:
+  - 'inurl:api_key filetype:txt site:{target}'
+  - 'inurl:apikey filetype:env site:{target}'
+  - '"api_key" filetype:json site:{target}'
+  - '"secret_key" filetype:js site:{target}'
