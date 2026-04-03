@@ -7,7 +7,7 @@ from typing import Optional
 import typer
 from dotenv import load_dotenv
 
-load_dotenv()
+from pathlib import Path load_dotenv(Path(__file__).parent / ".env") ```  This forces it to look for `.env` in the same folder as `main.py` regardless of where you run the script from.  Make that change, save, then run: ``` python main.py run
 
 app_cli = typer.Typer(
     name="dorkmax",
